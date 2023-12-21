@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 // import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { FaTrophy } from "react-icons/fa6";
 import useAuth from "../../../Hooks/useAuth";
 
 
@@ -61,23 +60,23 @@ const Addtask = () => {
           <div className="lg:flex gap-4 ">
           <div className="form-control w-full my-6 col-span-8">
             <label className="label">
-              <span className="label-text">Contest name*</span>
+              <span className="label-text">Task Title*</span>
             </label>
             <input
               type="text"
-              placeholder="Contest name"
-              {...register("name", { required: true })}
+              placeholder="Task Title"
+              {...register("title", { required: true })}
               className="input input-bordered w-full"
             />
           </div>
           <div className="form-control my-6 col-span-4">
             <label className="label">
-              <span className="label-text">Contest date*</span>
+              <span className="label-text">Deadline*</span>
             </label>
             <input
               type="date"
              
-              {...register("date", { required: true })}
+              {...register("deadline", { required: true })}
               className="input input-bordered w-full"
             />
           </div>
@@ -86,7 +85,7 @@ const Addtask = () => {
             {/* Category */}
             <div className="form-control w-full my-6 ">
               <label className="label">
-                <span className="label-text">Contest Tags*</span>
+                <span className="label-text">Priority*</span>
               </label>
               <select
                 defaultValue="default"
@@ -94,12 +93,11 @@ const Addtask = () => {
                 className="select select-bordered w-full"
               >
                 <option disabled value="default">
-                  Select a Tag
+                  Set Priority
                 </option>
-                <option value="Business Contest">Business Contest</option>
-                <option value="Medical Contest">Medical Contest</option>
-                <option value="Article Writing">Article Writing</option>
-                <option value="Gaming">Gaming</option>
+                <option value="Business Contest">Low</option>
+                <option value="Medical Contest">Moderate</option>
+                <option value="Article Writing">High</option>
               
               </select>
            
@@ -107,7 +105,7 @@ const Addtask = () => {
           
             {/* Price */}
 
-            <div className="form-control w-full my-6 ">
+            {/* <div className="form-control w-full my-6 ">
               <label className="label">
                 <span className="label-text">Contest Price*</span>
               </label>
@@ -117,10 +115,10 @@ const Addtask = () => {
                 {...register("price", { required: true })}
                 className="input input-bordered w-full"
               />
-            </div>
+            </div> */}
             {/* Price Money */}
 
-            <div className="form-control w-full my-6 ">
+            {/* <div className="form-control w-full my-6 ">
               <label className="label">
                 <span className="label-text">Price Money*</span>
               </label>
@@ -130,12 +128,12 @@ const Addtask = () => {
                 {...register("pmoney", { required: true })}
                 className="input input-bordered w-full"
               />
-            </div>
+            </div> */}
           </div>
           {/* recipe details */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Task and Submission Instruction</span>
+              <span className="label-text">Description</span>
             </label>
             <textarea
               {...register("instruction", { required: true })}
@@ -144,17 +142,17 @@ const Addtask = () => {
             ></textarea>
           </div>
 
-          <div className="form-control w-full">
+          {/* <div className="form-control w-full">
             <input
               {...register("image", { required: true })}
               type="file"
               className="file-input w-full max-w-xs"
             />
-          </div>
+          </div> */}
 
           <button className=" mt-4 btn">
-            Add Contest
-           <FaTrophy></FaTrophy>
+            Add Task
+          
           </button>
         </form>
       </div>

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+// import Dashboard from "../../Layout/dashboard";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Banner = () => {
+  const {user} = UseAuth()
   return (
     <div>
       <div
@@ -17,7 +20,7 @@ const Banner = () => {
             <p className="mb-5">
               The platform aims to enhance and improve task management.
             </p>
-            <Link to="signin"><button className="btn btn-primary text-xl">Lets Explore</button></Link>
+            {user ? <Link to="/dashboard"><button className="btn btn-primary text-xl">Lets Explore</button></Link>: <Link to="/signIn"><button className="btn btn-primary text-xl">Lets Explore</button></Link> }
           </div>
         </div>
       </div>

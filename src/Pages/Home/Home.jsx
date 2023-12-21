@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import UseAuth from "../../Hooks/UseAuth";
 import Banner from "./Banner";
+import PeopleUsesSite from "./PeopleUsesSite";
 const Home = () => {
    
     const {loading} = UseAuth();
@@ -16,6 +17,7 @@ const Home = () => {
             <title>Your Task | Home</title>
             </Helmet>
           <Banner></Banner>
+          <PeopleUsesSite></PeopleUsesSite>
         </div>
     );
 };
