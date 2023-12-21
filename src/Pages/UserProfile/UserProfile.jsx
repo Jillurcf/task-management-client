@@ -35,7 +35,7 @@ const UserProfile = () => {
                   <p className="py-6">
                  Last Login time: {user?.metadata.lastSignInTime}
                   </p>
-                  <button className="btn btn-primary"><Link to='/'>Back to Home</Link></button>
+                  <button className="btn btn-primary"><Link to='/dashboard'>Back to dashboard</Link></button>
                 </div>
               </div>
             </div>

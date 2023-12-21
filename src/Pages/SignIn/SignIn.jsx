@@ -72,7 +72,7 @@ const SignIn = () => {
         console.log(result.user);
       })
       .catch((error) => console.error(error));
-    navigate(location?.state ? location.state : "/");
+    navigate(location?.state ? location.state : "/dashboard");
   };
 
   return (

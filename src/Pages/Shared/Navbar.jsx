@@ -121,36 +121,22 @@ const NavBar = () => {
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   {/* <h1 className="text-center text-blue-600 font-bold">User Profile</h1> */}
-                  <li>
+                  {/* <li>
                     <button className="btn btn-sm btn-secondary">
                    <Link to='/userProfile'> View Profile</Link>
                     </button>
-                  </li>
+                  </li> */}
                   <li>
                     <button className="btn btn-sm btn-ghost">
                      Name: {user.displayName}
                     </button>
                   </li>
-                  {/* <li>
-                    <button className="btn btn-sm btn-ghost">
-                    {user.email}
-                    </button>
-                  </li> */}
                   <li>
                     <button className="btn btn-sm btn-ghost">
-                     <Link to='/addFood'>My Added Food Item</Link>
+                   dashboard
                     </button>
                   </li>
-                  <li>
-                    <button className="btn btn-sm btn-ghost">
-                    <Link to="/addFood"> Add a Food Item</Link>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="text-center btn btn-sm btn-ghost">
-                     <Link to="/orderdFood">My Ordered Food items</Link>
-                    </button>
-                  </li>
+                 
                   <li>
                     <button
                       className="btn btn-sm btn-ghost mt-4"
