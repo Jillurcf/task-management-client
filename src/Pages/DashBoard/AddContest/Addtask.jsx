@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
-import Sectiontitle from "../../../Component/SectionTitle/Sectiontitle";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+// import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { FaTrophy } from "react-icons/fa6";
@@ -10,16 +9,16 @@ import useAuth from "../../../Hooks/useAuth";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
-const AddContest = () => {
+const Addtask = () => {
   const {user} = useAuth()
   const { register, handleSubmit, reset } = useForm();
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
   const axoiosSecure = useAxiosSecure();
   const onSubmit = async (data) => {
     console.log(data);
     // image upload to imgbb and then get an url
     const imgFile = { image: data.image[0] };
-    const res = await axiosPublic.post(image_hosting_api, imgFile, {
+    const res = await axoiosSecure.post(image_hosting_api, imgFile, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -56,10 +55,7 @@ const AddContest = () => {
 
   return (
     <div>
-      <Sectiontitle
-        heading="Add a Contest"
-        subHeading="what's new"
-      ></Sectiontitle>
+      
       <div className="">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="lg:flex gap-4 ">
@@ -166,4 +162,4 @@ const AddContest = () => {
   );
 };
 
-export default AddContest;
+export default Addtask;
