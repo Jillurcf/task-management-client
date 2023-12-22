@@ -76,7 +76,7 @@ console.log(newTasks);
   }
   return (
     <div>
-       <Dnd></Dnd>
+       {/* <Dnd></Dnd> */}
       <div className="grid grid-cols-3">
         <div className="overflow-x-auto">
           <table className="table w-full">
@@ -112,14 +112,14 @@ console.log(newTasks);
                       </button>
                     </Link>
                   </td> */}
-                  {/* <td>
+                  <td>
                     <button
                       onClick={() => handleDeleteItem(item)}
                       className="btn btn-ghost btn-lg"
                     >
                       <FaTrashAlt className="text-red-600"></FaTrashAlt>
                     </button>
-                  </td> */}
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import UseAuth from "./UseAuth";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://task-management-platform-server-iota.vercel.app/api/v1',
+    baseURL: 'http://localhost:5000/api/v1',
     withCredentials: true
 })
 
