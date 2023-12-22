@@ -10,9 +10,9 @@ const Dashboard = () => {
  
 
   return (
-    <div className="flex">
+    <div className="lg:flex">
       {/* dashboard sidebar */}
-      <div className=" w-64 min-h-screen bg-blue-400">
+      <div className=" w-64 lg:min-h-screen bg-blue-400">
         <ul className="menu p-4">
           
             <>
@@ -29,7 +29,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageContests">
+                <NavLink to="/dashboard/manageTask">
                   <FaTrophy></FaTrophy>
                   Manage task
                 </NavLink>

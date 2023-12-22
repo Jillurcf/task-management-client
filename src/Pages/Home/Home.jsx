@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import UseAuth from "../../Hooks/UseAuth";
 import Banner from "./Banner";
 import PeopleUsesSite from "./PeopleUsesSite";
+import Dnd from "../DashBoard/ManageContests/Dnd";
 const Home = () => {
    
     const {loading} = UseAuth();
@@ -18,6 +19,7 @@ const Home = () => {
             </Helmet>
           <Banner></Banner>
           <PeopleUsesSite></PeopleUsesSite>
+          <Dnd></Dnd>
         </div>
     );
 };

@@ -53,7 +53,7 @@ const Register = () => {
         console.log(result.user);
         const loggedInuser = result.user;
         const user = {email};
-        axios.post('https://assignment11-server-side-chi.vercel.app/jwt', user, {withCredentials: true})
+        axios.post('https://task-management-platform-server-iota.vercel.app/api/v1/jwt', user, {withCredentials: true})
   
       // navigate(location?.state ? location?.state : '/')
  
@@ -69,7 +69,7 @@ const Register = () => {
         const createdAt = result.user?.metadata.creationTime;
 
         const duser = { email, password, createdAt: createdAt };
-        fetch("https://assignment11-server-side-chi.vercel.app/api/v1/user", {
+        fetch("https://task-management-platform-server-iota.vercel.app/api/v1/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",

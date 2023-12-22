@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 
 
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+// const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+// const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const Addtask = () => {
   const {user} = useAuth()
@@ -16,26 +16,26 @@ const Addtask = () => {
   const onSubmit = async (data) => {
     console.log(data);
     // image upload to imgbb and then get an url
-    const imgFile = { image: data.image[0] };
-    const res = await axoiosSecure.post(image_hosting_api, imgFile, {
-      headers: {
-        "content-Type": "multipart/form-data",
-      },
-    });
-    if (res.data) {
+    // const imgFile = { image: data.image[0] };
+    // const res = await axoiosSecure.post(image_hosting_api, imgFile, {
+    //   headers: {
+    //     "content-Type": "multipart/form-data",
+    //   },
+    // });
+    // if (res.data) {
       // now send the menu item data to the server with the image url
-      const contestItem = {
-        name: data.name,
-        email: user?.email,
-        date: data.date,
+      const newTaskItem = {
+        name: data.title,
+        // email: user?.email,
+        date: data.deadline,
         tags: data.tags,
-        contestPrice: parseFloat(data.price),
-        prizeMoney: data.pmoney,
+        // contestPrice: parseFloat(data.price),
+        // prizeMoney: data.pmoney,
         instruction: data.instruction,
-        participants: 0,
-        image: res.data.data.display_url,
+        // participants: 0,
+        // image: res.data.data.display_url,
       };
-      const contestRes = await axoiosSecure.post("/contests", contestItem);
+      const contestRes = await axoiosSecure.post("/newTask", newTaskItem);
       console.log(contestRes.data);
       if (contestRes.data) {
         // show success popup
@@ -49,8 +49,8 @@ const Addtask = () => {
         });
       }
     }
-    console.log("with img url", res.data);
-  };
+    // console.log("with img url", res.data);
+  // };
 
   return (
     <div>

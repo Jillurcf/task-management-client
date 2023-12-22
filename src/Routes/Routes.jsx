@@ -9,6 +9,7 @@ import UserProfile from "../Pages/UserProfile/UserProfile";
 import Dashboard from "../Layout/dashboard";
 import PrivateRoute from "./PrivateRoute";
 import Addtask from "../Pages/DashBoard/AddContest/Addtask";
+import ManageTask from "../Pages/DashBoard/ManageContests/ManageTask";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "addTask",
         element: <Addtask></Addtask>,
+      },
+      {
+        path: "manageTask",
+        element: <ManageTask></ManageTask>,
       },
     ]
   },

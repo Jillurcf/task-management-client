@@ -50,14 +50,14 @@ const AuthProvider = ({children}) => {
           setLoading(false);
           console.log("current user", currentUser);
           if (currentUser) {
-            axios.post("https://assignment11-server-side-chi.vercel.app/api/v1/jwt", loggedUser, {
+            axios.post("https://task-management-platform-server-iota.vercel.app/api/v1/jwt", loggedUser, {
                 withCredentials: true
               })
               .then((res) => {
                 console.log("token response", res.data);
               });
           } else {
-            axios.post("https://assignment11-server-side-chi.vercel.app/api/v1/loggedOut", loggedUser, {withCredentials: true})
+            axios.post("https://task-management-platform-server-iota.vercel.app/api/v1/loggedOut", loggedUser, {withCredentials: true})
             .then(res => {
               console.log(res.data);
             })
